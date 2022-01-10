@@ -1,0 +1,59 @@
+<!-- {{ template "header2" . }} -->
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>{{ .Title }} | home.go</title>
+        <!-- font import -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../assets/login.css" />
+        <link rel="stylesheet" type="text/css" href="../assets/style.css" />
+        <script type="text/javascript" src="../assets/script.js"></script>
+</head>
+<header>
+        <h1 class="head_logo"><a href="/">TiTable</a></h1>
+</header>
+<body>
+<!-- header2 -->
+
+
+<div class="login">
+        <h2>TiTable へようこそ</h2>
+        <p>作成するアカウント情報を入力してください</p>
+        <ul>
+                <form action="/Signup" method="POST" class="login_form">
+                <li>
+                        <label for="name"></label>
+                        <input  class="form" type="text" name="user" placeholder="User Name" required>
+                </li>
+                <li>
+                        <div class="warn">{{ .InfoUser }}</div>
+                </li>
+                <il>
+                        <label for="password"></label>
+                        <input  class="form" type="password" name="pw" placeholder="Password" required>
+                </li>
+                <il>
+                        <label for="email"></label>
+                        <input  class="form" type="email" name="mail" placeholder="Email" required>
+                </li>
+                <li>
+                        <div class="warn">{{ .InfoMail }}</div>
+                </li>
+                <il>
+                        <label for="authrize">　　ユーザ認証情報</label>
+                        <input  class="form" type="text" name="user_auth" placeholder="Authrize" required>
+                </li>
+                <li>
+                        <input class="form_button" type="submit" value="Create Account">
+                </li>
+                </form>
+        </ul>
+        </div>
+<!-- {{ template "footer" }} -->
+</body>
+</html>
+<!-- footer -->
+

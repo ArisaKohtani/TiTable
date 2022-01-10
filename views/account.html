@@ -1,0 +1,66 @@
+<!-- {{ template "header" . }} -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ .Title }} | home.go</title>
+    <!-- font import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../assets/style.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/login.css" />
+    <script type="text/javascript" src="../assets/script.js"></script>
+
+</head>
+<header>
+    <h1 class="head_logo"><a href="/">TiTable</a></h1>
+    <nav>
+        <ul  class="menu">
+            <li><a href="/AccountEdit">USER INFO</a></li>
+            <li><a href="/logout">LOG OUT</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+<!-- header -->
+
+
+<div class="login">
+    <h3>{{ .User }}さんのアカウント情報を編集する</h2>
+    <ul>
+        <li>
+            <form action="/AccountEdit" method="POST">
+                <label for="user"</label>
+                <input class="form" type="text" placeholder="New User Name" name="user">
+                <input class="edit_button" type="submit" value="ユーザー名を変更">
+        </li>
+        <li>
+                <label for="pw"></label>
+                <input class="form" type="password" placeholder="New Password" name="pw">
+                <input class="edit_button" type="submit" value="パスワードを変更">
+        </li>
+        <li>
+                <label for="email_id"></label>
+                <input class="form" type="text" placeholder="New Mail ID" name="email_id">
+                <input class="edit_button" type="submit" value="メールIDを変更">
+            </form>
+        </li>
+        <li>
+            <label for="iurl"></label>
+            <input class="form" type="text" placeholder="New iCalendar URL" name="iurl">
+            <input class="edit_button" type="submit" value="iCalendarを更新">
+        </form>
+        </li>
+        <li>
+            <a href="/AccountEdit" class="bye_button">アカウント消去</a>
+        </li>
+    </ul>
+</div>
+
+<!-- {{ template "footer" }} -->
+</body>
+</html>
+<!-- footer -->
+

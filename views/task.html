@@ -1,0 +1,93 @@
+<!-- {{ template "header" . }} -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ .Title }} | home.go</title>
+    <!-- font import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../assets/style.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/task.css" />
+    <script type="text/javascript" src="../assets/script.js"></script>
+
+</head>
+<header>
+    <h1 class="head_logo"><a href="/">TiTable</a></h1>
+    <nav>
+        <ul  class="menu">
+            <li><a href="/AccountEdit">USER INFO</a></li>
+            <li><a href="/logout">LOG OUT</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+<!-- header -->
+
+<div class="tasks">
+<h2>タスクの詳細</h2>
+<ul>
+    <li>
+        タイトル: {{ .task.Title }}
+    </li>
+    <li>
+        授業名: {{ .task.ClassName }}
+    </li>
+    <li>
+        登録時刻: {{ .task.CreatedAt }}
+    </li>
+    <li>
+        締め切り: {{ .task.Deadline }}
+    </li>
+    <li>
+        難易度: {{ .task.Difficulty }}
+    </li>
+    <li>{{ if .task.IsDone }}済{{ else }}未{{ end }}</li>
+</ul>
+</div>
+
+<div class="task_edit">
+<ul>
+    <li>
+        {{ if .task.IsDone }}
+        <form action="/#" method="POST">
+            <input class="edit_button" type="submit" value="タスクを未完にする">
+            <input type="hidden" name="id" value="{{ .task.ID }}">
+        </form>
+        {{ else }}
+        <form action="/#" method="POST">
+            <input class="edit_button" type="submit" value="タスクを済にする">
+            <input type="hidden" name="id" value="{{ .task.ID }}">
+        </form>
+        {{ end }}
+        <br>
+    </li>
+</ul>
+    
+<ul>
+    <form action="/#" method="POST">
+        <li>
+        <label for="title"></label>
+        <input class="form" type="text"  placeholder="New Title" name="title">
+        </li>
+        <li>
+        <input class="edit_button" type="submit" value="タイトルを変更する">
+        <input type="hidden" name="id" value="{{ .task.ID }}">
+        </li>
+    </form>
+
+    <li>
+        <form action="/#" method="POST">
+            <input class="bye_button" type="submit" value="タスクを削除する">
+            <input type="hidden" name="id" value="{{ .task.ID }}">
+        </form>
+    </li>
+</ul>
+
+
+<!-- {{ template "footer" }} -->
+</body>
+</html>
+<!-- footer -->

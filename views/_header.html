@@ -1,0 +1,25 @@
+{{ define "header" }}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ .Title }} | home.go</title>
+    <!-- font import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/login.css" />
+    <script type="text/javascript" src="../assets/script.js"></script>
+
+</head>
+<header>
+    <h1 class="head_logo"><a href="/">TiTable</a></h1>
+    <nav>
+        <ul  class="menu">
+            <li><a href="/AccountEdit">USER INFO</a></li>
+            <li><a href="/logout">LOG OUT</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+{{ end }}
